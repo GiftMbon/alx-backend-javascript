@@ -1,16 +1,14 @@
 const express = require('express');
 
-const PORT = 1245;
-const HOST = '127.0.0.1';
+// Initialize an Express application
 const app = express();
 
-app.get('/', (req, resp) => {
-  resp.statusCode = 200;
-  resp.setHeader('Content-Type', 'text/plain');
-  resp.setHeader('X-Served-By', 'itsfoss');
-  resp.send('Hello ALX!');
+// Define a route for the root endpoint '/'
+app.get('/', (req, res) => {
+  res.send('Hello ALX!');
 });
 
-app.listen(PORT, HOST, () => {});
-
-module.exports = app;
+// Make the server listen on port 1245
+app.listen(1245, () => {
+  console.log('Server is running on port 1245');
+});
